@@ -61,8 +61,19 @@ class BurgerBuilder extends Component {
 
     orderHandler = () => { //refers to class because that the syntax
         this.setState({
-            ordering: !this.state.ordering
+            ordering: true
         });
+    }
+    orderCancelHandler = () => { //refers to class because that the syntax
+        this.setState({
+            ordering: false
+        });
+    }
+    orderContinueHandler = () => { //refers to class because that the syntax
+        this.setState({
+            ordering: false
+        });
+        alert('Thanks!');
     }
 
     updatePurchaseState (updatedIngState) {
@@ -90,8 +101,8 @@ class BurgerBuilder extends Component {
             <Aux>
                 <Modal 
                     show={this.state.ordering}
-                    clicked={this.orderHandler}>
-                    <OrderSummary ingredients={this.state.ingredients}/>
+                    clicked={this.orderCancelHandler}>
+                    <OrderSummary ingredients={this.state.ingredients} continue={this.orderContinueHandler} cancel={this.orderCancelHandler}/>
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>
                 <BuildControls
