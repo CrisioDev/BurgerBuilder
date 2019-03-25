@@ -4,9 +4,9 @@ import Logo from "../../../components/Logo/Logo";
 import NavigationItems from "../Navigationitems/Navigationitems";
 import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
 
-const toolbar = props => (
+const toolbar = (props) => (
   <header className={classes.Toolbar}>
-    <DrawerToggle clicked={props.drawerToggleClicked}/>
+    <DrawerToggle clicked={props.drawerToggleClicked} />
     <div className={classes.Logo}>
       <Logo width="auto" height="100%" />
     </div>
